@@ -1,0 +1,100 @@
+!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+
+		var bg="#FFFFE1"
+
+		var fs=2
+
+		var flg = 0;
+
+		M = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		D = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+		function getBgn() 
+		{
+			pdy = new Date();        
+			pmo = pdy.getMonth();    
+			pyr = pdy.getYear();    
+			if (pyr < 2000)   
+				pyr = pyr + 1900; 
+			yr = yr1 = (pmo==0?pyr-1:pyr); 
+			mo = (pmo==0?11:pmo-1);  
+			
+			yr = pyr;              
+			mo = pmo;                
+			bgn = new Date(M[mo]+" 1,"+yr); 
+			Calendar();          
+			document.write('</TD><TD VALIGN=TOP>');
+			
+		}
+		function Calendar(){
+			dy = bgn.getDay();
+			yr = eval(yr);
+			d = "312831303130313130313031";
+			if (yr / 4 == Math.floor(yr / 4)) {
+				d = d.substring(0, 2) + "29" + d.substring(4, d.length);
+			}
+			pos = (mo * 2);
+			ld = eval(d.substring(pos, pos + 2));
+			document.write("<TABLE BORDER=1"
+				+ " BGCOLOR='" + bg
+				+ "'><TR><TD ALIGN=CENTER COLSPAN=7>"
+				+ "<FONT SIZE=" + fs + ">" + M[mo] + " " + yr
+				+ "</FONT></Td></Tr><Tr><Tr>");
+			for (var i = 0;i < 7;i ++) {
+				document.write("<TD ALIGN=CENTER>"
+					+"<FONT SIZE="+fs+">" + D[i] + "</FONT></TD>");
+			}
+			document.write("</Tr><Tr>");
+			ctr = 0;
+			for (var i = 0;i < 7; i++){
+				if (i < dy) {
+					document.write("<TD ALIGN=CENTER>"
+						+"<FONT SIZE=" + fs + "> </FONT>"
+						+"</TD>");
+				}
+				else {
+					ctr++;
+					document.write("<TD ALIGN=CENTER>"
+						+ "<FONT SIZE=" + fs + ">" + ctr + "</FONT>"
+						+ "</TD>");
+				}
+			}
+			document.write("</TR><TR>");
+			while (ctr < ld) {
+				for (var i = 0;i < 7; i++){
+					ctr++;
+					if (ctr > ld){
+						document.write("<TD ALIGN=CENTER>"
+							+ " </TD>");
+					}
+					else {
+						document.write("<TD ALIGN=CENTER>"
+							+ "<FONT SIZE=" + fs + ">" + ctr + "</FONT>"
+							+ "</TD>");
+					}
+				}
+				document.write("</TR><TR>");
+			}
+			document.write("</TR></TABLE>");
+		}
+
+	</script> 
+
+	<CENTER>
+		<P><B>JavaScript Calendar For Current Month</B>
+			<SCRIPT LANGUAGE="JavaScript">
+
+				getBgn();
+
+			</SCRIPT>
+		</CENTER>
+
+	</body>
+	</html>

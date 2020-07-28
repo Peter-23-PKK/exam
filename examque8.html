@@ -1,0 +1,25 @@
+
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>How to get the value of textArea</title> 
+        <script type="text/javascript" src="jquery.min.js"></script>
+
+    <script> 
+        $(document).ready(function () { 
+            $("#btn").click(function () {
+                var txt = $("#txtArea").val(); 
+                alert(txt); 
+            }); 
+        }); 
+    </script> 
+    </head> 
+    <body> 
+        <center> 
+            <h1 style="color: green;">GeeksforGeeks</h1> 
+            <textarea id="txtArea"></textarea><br><br> 
+            <button id="btn">Show Text</button> 
+        </center> 
+    </body> 
+
+</html> 

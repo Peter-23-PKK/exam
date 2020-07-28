@@ -1,0 +1,10 @@
+#searchbar{
+	width: 500px;
+}
+#results{
+	font-size: 13px;
+	color: grey;
+}
+#hr{
+	border: 2px solid;
+}

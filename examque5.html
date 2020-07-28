@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam 4</title>
+</head>
+<script type="text/javascript">
+	function calculate() {
+		var first_number=parseInt(document.myform.n1.value);
+		console.log(first_number);
+		var second_number=parseInt(document.myform.n2.value);
+		sum(first_number,second_number);
+	}
+	function sum(a,b){
+		var sum=a+b;
+		document.myform.Sum.value=sum;
+	}
+</script>
+<body>
+	<form name="myform">
+		First Number:<input type="Number" name="n1"><br>
+		Second Number:<input type="Number" name="n2"><br>
+		<input type="button" name="button" onclick="calculate()" value="sum"><br>
+		<input type="Number" name="Sum">
+	</form>
+</body>
+</html>

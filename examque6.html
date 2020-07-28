@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caculator</title>
+	<script type="text/javascript">
+		function caculate(){
+		
+		var first_number=parseInt(document.myform.first_number.value);
+		var second_number=parseInt(document.myform.second_number.value);
+		console.log(first_number,second_number);
+		var sum=first_number+second_number;
+		var sub=first_number-second_number;
+		var mul=first_number*second_number;
+		var div=first_number/second_number;
+		var mod=first_number%second_number;
+		console.log(sum);
+		document.myform.Sum.value=sum;
+		console.log(sub);
+		document.myform.Sub.value=sub;
+		console.log(mul);
+		document.myform.Mul.value=mul;
+		console.log(sub);
+		document.myform.Div.value=div;
+		console.log(mod);
+		document.myform.Mod.value=mod;
+	}
+	</script>
+</head>
+<body>
+<form name="myform">
+	<label for="ok">First Number:</label> <input type="number" name="first_number" id="ok"><br><br>
+	<label for="kk">Second Number:</label> <input type="number" name="second_number" id="kk"><br><br>
+	
+	<input type="button" value="Caculate" onclick="caculate()"><br><br>
+
+	Sum:<input type="number" name="Sum"><br><br>
+	Sub:<input type="number" name="Sub"><br><br>
+	Mul:<input type="number" name="Mul"><br><br>
+	Div:<input type="number" name="Div"><br><br>
+	Mod:<input type="number" name="Mod"><br><br>
+</form>
+</body>
+</html>

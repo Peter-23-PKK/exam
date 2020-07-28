@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Football</title>
+</head>
+<script type="text/javascript">
+function calculate() {
+		var first_number=parseInt(document.myform.n1.value);
+		var second_number=parseInt(document.myform.n2.value);
+		var third_number=parseInt(document.myform.n3.value);
+		sum(first_number,second_number,third_number);
+	}
+	function sum(a,b,c){
+		var sum=a*3+b+c*0;
+		document.myform.Sum.value=sum;
+	}
+</script>
+<body>
+	<form name="myform">
+		Win:<input type="Number" name="n1"><br>
+		Draw:<input type="Number" name="n2"><br>
+		Lose:<input type="Number" name="n3"><br>
+		<input type="button" name="button" onclick="calculate()" value="sum"><br>
+		<input type="Number" name="Sum">
+	</form>
+
+</body>
+</html>
